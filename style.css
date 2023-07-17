@@ -11,7 +11,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: #95e5f9;
   height: 35px;
   display: flex;
   justify-content: center; /* Add this line */
@@ -28,12 +28,12 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-  background-color: #555;
+  background-color: #1f47cb;
   color: white;
 }
 
 li .active {
-  background-color: #04AA6D;
+  background-color: #2471ff;
   color: white;
 }
 
@@ -61,7 +61,7 @@ li .active {
 }
 
 .space-underneath {
-  height: 30px; /* Adjust the desired height for the space */
+  height: 40px; /* Adjust the desired height for the space */
 }
 
 .fact-container {
@@ -70,17 +70,6 @@ li .active {
   padding: 10px;
   background-color: #9be0f0;
   border-radius: 10px;
-}
-
-.image-container {
-  width: 100%;
-  padding: 10px;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
 }
 
 /*art */
@@ -145,3 +134,22 @@ li .active {
   border-radius: 6px;
 }
 
+/*toronto*/
+
+.image-grid img {
+  width: 100%;
+}
+
+/*resume*/
+.message-box {
+  margin: 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+}
