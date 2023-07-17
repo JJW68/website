@@ -3,6 +3,10 @@
   font-size: 20px;
 }
 
+h3 {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -66,34 +70,6 @@ li .active {
   padding: 10px;
   background-color: #9be0f0;
   border-radius: 10px;
-}
-
-.flex-container {
-  display: flex;
-  background-color: DodgerBlue;
-}
-
-.flex-container > div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-}
-.flex-container > .column {
-  width: 50%;
-}
-
-.flexbox-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.flexbox-item {
-  width: 200px;
-  height: 100px;
-  margin: 10px;
-  padding: 10px;
-  background-color: #f0f0f0;
 }
 
 .image-container {
