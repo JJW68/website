@@ -9,7 +9,7 @@ h3 {
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 50px;
   padding: 0;
   background-color: #95e5f9;
   height: 35px;
@@ -140,6 +140,17 @@ li .active {
   width: 100%;
 }
 
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-container {
+  margin: 50px;
+}
+
 /*resume*/
 .message-box {
   margin: 20px;
@@ -152,4 +163,20 @@ textarea {
 
 button {
   padding: 10px 20px;
+}
+
+@media screen and (max-width: 900px) {
+  #grid-id {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item:nth-child(even) {
+    border: 3px solid #ccc;
+    border-top: 0;
+  }
+
+  .grid-item:nth-child(odd) {
+    border: 3px solid #ccc;
+    border-bottom: 0;
+  }
 }
