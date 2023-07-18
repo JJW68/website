@@ -5,9 +5,9 @@
     <script>
       // Call loadHomePage() when the DOM content is loaded
       window.addEventListener('DOMContentLoaded', (event) => {
-          loadHomePage(); 
+        loadMusicPlayer();
       });
-  </script>
+    </script>
   </head>
   <body>
     <ul>
@@ -20,35 +20,23 @@
     <div id="content">
       <div class="song-player-container">
         <div class="song-image-container">
-          <div class="song-image">
-            <img src="images/start over.jpeg" alt="Start Over Cover">
+          <div class="song-image-wrapper">
+            <img id="song-image" src="" alt="Start Over Cover">
           </div>
         </div>
         <div class="space-underneath"></div>
         <div class="mp3-controls">
-          <audio controls>
-              <source src="music/start over - gaho.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
+          <audio id="audio-control" controls>
+              <source id="audio-control-source" src="" type="audio/mpeg">
           </audio>
         </div>
         <div class="buttons">
-          <span class="larger-font">⏮</span>
-          <span class="larger-font">⏭</span>
+          <span id="prev-button" class="larger-font">⏮</span>
+          <span id="next-button" class="larger-font">⏭</span>
         </div>
-        
-        <!-- <div class="next-button-container">
-          <div class="next-button">
-            <p class="larger-font right-aligned">⏭</p>
-          </div>
-        </div>
-        <div class="previous-button-container">
-          <div class="previous-button">
-            <p class="larger-font left-aligned">⏮</p>
-          </div>
-        </div> -->
         <div class="song-information">
-          <h2>Song name</h2>
-          <h3>Composer</h3>
+          <h2 id="song-name">Song name</h2>
+          <h3 id="composer-name">Composer</h3>
         </div>
       </div>  
     </div>
