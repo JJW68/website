@@ -49,6 +49,7 @@ li .active {
 .left-aligned {
   text-align: left;
 }
+
 .container {
   width: 500px;
   margin: 10px auto;
@@ -225,7 +226,7 @@ button {
 
 .song-player-container {
   width: 400px;
-  height: 500px;
+  height: 550px;
   margin: 10px auto;
   padding: 10px;
   background-color: #cee9ef;
@@ -238,6 +239,7 @@ button {
   border-radius: 50%;
   background-color: #f1f1f1;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .song-image img {
@@ -247,4 +249,26 @@ button {
   border-radius: 50%;
 }
 
+.mp3-controls {
+  width: 300px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.larger-font {
+  font-size: 50px;
+}
+
+.previous-button {
+  margin-left: 80px;
+  align-items: center;
+}
+
+.buttons span {
+  margin: 30px;
+}
+
+.song-information {
+  margin-top: -220px;
+}
 

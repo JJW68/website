@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      // Call loadHomePage() when the DOM content is loaded
+      window.addEventListener('DOMContentLoaded', (event) => {
+          loadHomePage(); 
+      });
+  </script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="home.html" class ="">Home</a></li>
+      <li><a href="toronto.html" class ="">Toronto</a></li>
+      <li><a href="art.html" class ="">Art</a></li>
+      <li><a href="contact.html" class ="">Contact</a></li>
+      <li><a href="player.html" class ="active">Player</a></li>
+    </ul>
+    <div id="content">
+      <div class="song-player-container">
+        <div class="song-image-container">
+          <div class="song-image">
+            <img src="images/start over.jpeg" alt="Start Over Cover">
+          </div>
+        </div>
+        <div class="space-underneath"></div>
+        <div class="mp3-controls">
+          <audio controls>
+              <source src="music/start over - gaho.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="buttons">
+          <span class="larger-font">⏮</span>
+          <span class="larger-font">⏭</span>
+        </div>
+        
+        <!-- <div class="next-button-container">
+          <div class="next-button">
+            <p class="larger-font right-aligned">⏭</p>
+          </div>
+        </div>
+        <div class="previous-button-container">
+          <div class="previous-button">
+            <p class="larger-font left-aligned">⏮</p>
+          </div>
+        </div> -->
+        <div class="song-information">
+          <h2>Song name</h2>
+          <h3>Composer</h3>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>
