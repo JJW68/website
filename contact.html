@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      // Call loadHomePage() when the DOM content is loaded
+      window.addEventListener('DOMContentLoaded', (event) => {
+          loadHomePage(); 
+      });
+  </script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="home.html" class ="">Home</a></li>
+      <li><a href="toronto.html" class ="">Toronto</a></li>
+      <li><a href="art.html" class ="">Art</a></li>
+      <li><a href="contact.html" class ="active">Contact</a></li>
+    </ul>
+    <div id="content">
+      <h2>Send me a message</h2>
+      <div class="message-box">
+        <form>
+          <textarea id="message" rows="4" placeholder="Type your message here"></textarea>
+          <button type="send">Send</button>
+        </form>
+      </div>
+      <div class="song-player-container">
+        <div class="song-image-container">
+          <div class="song-image">
+            <!-- <img src="images/start over.jpeg" alt="Start Over Cover"> -->
+          </div>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>
