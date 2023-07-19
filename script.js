@@ -1,50 +1,57 @@
 class MusicPlayer {
   constructor(
-    songNameElement,
-    composerNameElement,
-    songImageElement,
-    audioControl,
-    audioControlSource
+    songNameElement,        // element to display the song name
+    composerNameElement,    // element to display the composer name
+    songImageElement,       // element to display the song image
+    audioControl,           // audio control element
+    audioControlSource      // audio control source element
     ) {
-    this.songs = [];
-    this.songIndex = 0;
+    this.songs = [];        // array to store the songs
+    this.songIndex = 0;     // index of the song that is currently loaded
 
-    this.songNameElement = songNameElement;
-    this.composerNameElement = composerNameElement;
-    this.songImageElement = songImageElement;
-    this.audioControl = audioControl;
-    this.audioControlSource = audioControlSource;
+    this.songNameElement = songNameElement;           // reference to the song name element
+    this.composerNameElement = composerNameElement;   // reference to the composer name element
+    this.songImageElement = songImageElement;         // reference to the song image element
+    this.audioControl = audioControl;                 // reference to the audio control element
+    this.audioControlSource = audioControlSource;     // reference to the audio control source element
   }
 
   addSong(song) {
-    this.songs.push(song);
+    this.songs.push(song);  // add a new song to the songs array
   }
 
   loadSongAtIndex(i) {
-    this.songNameElement.innerHTML = songs[i].songName;
-    this.composerNameElement.innerHTML = songs[i].composer;
-    this.songImageElement.src = "music/" + songs[i].albumCover;
-    this.audioControlSource.src = "music/" + songs[i].fileName;
-    this.audioControl.load();
+    this.songNameElement.innerHTML = songs[i].songName;           // display the song name
+    this.composerNameElement.innerHTML = songs[i].composer;       // display the composer name
+    this.songImageElement.src = "music/" + songs[i].albumCover;   // set the image source
+    this.audioControlSource.src = "music/" + songs[i].fileName;   // set the audio source
+    this.audioControl.load();                                     // load the audio
   }
 
   nextSong() {
-    ++this.songIndex;
-    if (this.songIndex >= this.songs.length) {
+    // increase the song index
+    ++this.songIndex;                                
+    // if it exceeds the number of songs in the array, reset back to the first song so it becomes a continuous loop
+    if (this.songIndex >= this.songs.length) {      
       this.songIndex = 0;
     }
-    this.loadSongAtIndex(this.songIndex);
+    // load the next song
+    this.loadSongAtIndex(this.songIndex);           
   }
 
-  prevSong() {
-    --this.songIndex;
-    if (this.songIndex < 0) {
+  prevSong() {        
+    // decrease the song index                               
+    --this.songIndex;        
+    // if it goes below zero (the user is on the first song and trying to press the back button), set it back to the last song                       
+    if (this.songIndex < 0) {                      
       this.songIndex = this.songs.length - 1;
     }
+    // load the previous song
     this.loadSongAtIndex(this.songIndex);
   }
 }
 
+// array of songs
 const songs = [
   {
     songName: "Start Over",
@@ -78,29 +85,37 @@ const songs = [
   }
 ];
 
+// variable to hold the instance of the musicPlayer class
 let musicPlayer;
 
 function loadMusicPlayer() {
   musicPlayer = new MusicPlayer(
-    document.querySelector("#song-name"),
-    document.querySelector("#composer-name"),
-    document.querySelector("#song-image"),
-    document.getElementById("audio-control"),
-    document.getElementById("audio-control-source")
+    document.querySelector("#song-name"),             // get the song name element
+    document.querySelector("#composer-name"),         // get the composer name element
+    document.querySelector("#song-image"),            // get the song image element
+    document.getElementById("audio-control"),         // get the audio control element
+    document.getElementById("audio-control-source")   // get the audio control source element
   )
+
+  // add each song to the musicPlayer instance
   for (let i = 0; i < songs.length; i++) {
     musicPlayer.addSong(songs[i]);
   }
+
+  // load the first song
   musicPlayer.loadSongAtIndex(0);
 
+  // add event listeners to the previous and next buttons
   document.getElementById("prev-button").addEventListener("click", prevButtonPressed);
   document.getElementById("next-button").addEventListener("click", nextButtonPressed);
 }
 
 function prevButtonPressed() {
+  // call the prevSong method of the musicPlayer instance
   musicPlayer.prevSong();
 }
 
 function nextButtonPressed() {
+  // call the nextSong method of the musicPlayer instance
   musicPlayer.nextSong();
 }

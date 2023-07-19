@@ -1,12 +1,14 @@
 <!DOCTYPE html>
   <head>
+    <!-- meta tag to allow the website to be responsive and viewable on different devices/screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <!-- linking the page buttons-->
+    <!-- navigation menu -->
     <ul>
-      <li><a href="index.html" class ="active">Home</a></li>
+      <!-- set home page active -->
+      <li><a href="index.html" class ="active">Home</a></li> 
       <li><a href="toronto.html" class ="">Toronto</a></li>
       <li><a href="art.html" class ="">Art</a></li>
       <li><a href="playlist.html" class ="">Playlist</a></li>
@@ -15,17 +17,22 @@
     <div id="content">
       <h2>Welcome to my website!</h2>
       <h2>About me</h2>
+      <!-- container to hold text/information -->
       <div class="container">
           <p>Born and raised in Toronto; 100% night owl; hoodie lover; drama addict; aspiring for a memorable senior year.</p>
       </div>
+      <!-- add a space underneath (adjusted in the css file) to seperate the two textboxes -->
       <div class="space-underneath"></div>
-      <div class="fact-container">
+      <!-- another container for a second textbox -->
+      <div class="container">
+        <!-- I want two images in a circular shape on the page so I add a class so I can design the circles in the .css file. The reason the circles are in the container is so that they are able to move with the webpage as its size is adjusted or when it is scrolled. -->
         <div class="circle1">
           <img src="images/grad.png" alt="Grad">
         </div>
         <div class="circle2">
           <img src="images/toronto.jpeg" alt="Toronto">
         </div>
+        <!-- add a class so the information in this text box can be left-aligned -->
         <p class ="left-aligned"><b>Fun fact:</b> I like collecting coins</p>
         <p class ="left-aligned"><b>Hobbies:</b> arts and crafts</p>
         <p class ="left-aligned"><b>Comfort songs:</b> Start over by Gaho, Silence by Marshmello ft.Khalid</p>

@@ -1,4 +1,6 @@
+/* design for the website layout */
 
+/* styling for the navigation bar */
 ul {
   list-style-type: none;
   margin: 50px;
@@ -6,11 +8,12 @@ ul {
   background-color: #95e5f9;
   height: 35px;
   display: flex;
-  justify-content: center; /* Add this line */
-  align-items: center; /* Add this line */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  justify-content: center; 
+  align-items: center; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* a box shadow adds texture to the elements and makes it stand out more */
 }
 
+/* styling the text of the navigation bar */
 li a {
   color: #000;
   width: 60px;
@@ -19,17 +22,19 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color on hover */
+/* when the cursor is hovering over another section on the navigation bar, the colour will change to indicate that */
 li a:hover {
   background-color: #1f47cb;
   color: white;
 }
 
+/* the page that is currently active will have a different colour on the navigation bar to show this */
 li .active {
   background-color: #2471ff;
   color: white;
 }
 
+/* to make the navigation bar responsive, I added a media query so the navigation bar adjusts according to the size of the webpage */
 @media screen and (max-width: 600px) {
   ul {
     margin: 0;
@@ -37,44 +42,136 @@ li .active {
   }
 }
 
+/* general components that apply to all webpages */
+
+/* for text that I want vertically aligned */
 #content {
   text-align: center;
 }
 
+/* for text that I want aligned on the left*/
 .left-aligned {
   text-align: left;
 }
 
+/* styling the container that holds all the text and information on each page  */
 .container {
-  max-width: 500px;
+  max-width: 500px; /* I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 500px */
   margin: 10px auto;
   padding: 10px;
   background-color: #bbf3ff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* for spacing between elements */
 .space-underneath {
   height: 40px; /* Adjust the desired height for the space */
 }
 
-.fact-container {
-  max-width: 500px;
-  margin: 10px auto;
-  padding: 10px;
-  background-color: #bbf3ff;
+/* index/home page */
+
+/* styling a circle shape to hold an image */
+.circle1 {
+  margin-left: 550px;
+  margin-top: -240px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/*art */
+/* styling the grad image to match the circle shape */
+.circle1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
+/* styling another circle shape */
+.circle2 {
+  margin-left: -290px;
+  margin-top: -240px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* styling the other image of toronto to match the circle shape */
+.circle2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* adding a media query so that when the webpage size shrinks to a certain size, the pictures become hidden and only the information shows */
+@media screen and (max-width: 900px) {
+  .circle1, .circle2 {
+    display: none;
+  }
+}
+
+/* toronto  page */
+
+/* styling the grid container which is the structure of my information on this page */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* the grid has 2 columns and 4 rows */
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 50px;
+}
+
+/* styling the individual items in the grid */
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* adjusting the images that go in some sections of the grid */
+.image-grid img {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* media query for when the webpage becomes a certain size or when viewed from a phone, the grid becomes one column and the items are all vertically aligned */
+@media screen and (max-width: 900px) {
+  #grid-id {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item:nth-child(even) {
+    border: 3px solid #ccc;
+    border-top: 0;
+  }
+
+  .grid-item:nth-child(odd) {
+    border: 3px solid #ccc;
+    border-bottom: 0;
+  }
+}
+
+/* art page */
+
+/* styling and adjusting the sizes of the containers for images of my art */
 .image1-container, .image2-container, .image3-container{
-  max-width: 400px; /* Adjust the desired width for the container */
-  height: 550px; /* Adjust the desired height for the container */
+  max-width: 400px; /* I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 400px */
+  height: 550px;
   margin: 10px auto;
   border: 5px solid #b1e4db;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* adjusting art images into their respective containers */
 .image1-container img {
   width: 100%;
   height: 100%;
@@ -93,10 +190,10 @@ li .active {
   object-fit: cover;
 }
 
-
+/* a seperate container for one of the images as the height is different */
 .image4-container {
-  max-width: 400px; /* Adjust the desired width for the container */
-  height: 450px; /* Adjust the desired height for the container */
+  max-width: 400px; 
+  height: 450px; 
   margin: 10px auto;
   border: 5px solid #b1e4db;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -108,102 +205,9 @@ li .active {
   object-fit: cover;
 }
 
-/*toronto*/
+/* playlist page */
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  padding: 10px;
-  margin: 50px;
-}
-
-.grid-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.image-grid img {
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/*resume*/
-
-textarea {
-  width: 100%;
-  resize: vertical;
-}
-
-button {
-  padding: 10px 20px;
-}
-
-@media screen and (max-width: 900px) {
-  #grid-id {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-item:nth-child(even) {
-    border: 3px solid #ccc;
-    border-top: 0;
-  }
-
-  .grid-item:nth-child(odd) {
-    border: 3px solid #ccc;
-    border-bottom: 0;
-  }
-}
-
-/* home */
-
-.circle1 {
-  margin-left: 550px;
-  margin-top: -240px;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background-color: #f1f1f1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.circle1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.circle2 {
-  margin-left: -290px;
-  margin-top: -240px;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background-color: #f1f1f1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.circle2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-@media screen and (max-width: 900px) {
-  .circle1, .circle2 {
-    display: none;
-  }
-}
-
-/* playlist */
-
+/* styling the container so it looks like an actual music player */
 .song-player-container {
   width: 400px;
   height: 500px;
@@ -213,6 +217,7 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* circle shape for the pictures of the song album covers */
 .song-image-container {
   width: 240px;
   height: 240px;
@@ -222,6 +227,7 @@ button {
   margin-top: 30px;
 }
 
+/* song album cover images */
 .song-image-wrapper img {
   width: 100%;
   height: 100%;
@@ -229,21 +235,25 @@ button {
   border-radius: 50%;
 }
 
+/* adjusting the size of the controls (includes the play, volume, playback button) for the music */
 .mp3-controls {
   width: 300px;
   margin: auto;
 }
 
+/* size of the rewind/previous and next/forward button */
 #prev-button, #next-button {
   width: 50px;
   height: 50px;
 }
 
+/* placement of the buttons */
 .buttons img {
   margin: 0 30px;
-  cursor: pointer;
+  cursor: pointer; /* when the cursor is hovering over the buttons, it changes to a pointer so clicking them is more clear to the user */
 }
 
+/* media query so the playlist adjusts to a minature verison of itself when the webpage is small or is viewed on a phone */
 @media screen and (max-width: 600px) {
   .song-player-container {
     max-width: 300px;
@@ -255,7 +265,7 @@ button {
   }
 
   .song-image-container {
-    float: left;
+    float: left; /* the image changes position to the top left of the mini verison of the music player */
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -279,11 +289,11 @@ button {
   }
   
   .song-information {
-    margin-top: 37px;
+    margin-top: 37px; /* song information is adjusted to be beside the album image in the mini version of the music player */
   }
 
   #song-name {
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* when the text is too long to fit in the mini version of the music player, the portion of the text that flows outside the container is replaced by an ellipsis everything stays within the container*/
     overflow: hidden;
     white-space: nowrap;
     font-size: 20px;
@@ -297,8 +307,21 @@ button {
   }
 }
 
-/* contact */
+/* contact page */
+
+/* adjusting the size of the message box */
 .message-box {
   max-width: 300px;
   margin: 0 auto;
+}
+
+/* matching the area for the text to the size of the message box */
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* styling the send button */
+button {
+  padding: 10px 20px;
 }

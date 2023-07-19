@@ -1,40 +1,55 @@
 <!DOCTYPE html>
   <head>
+    <!-- meta tag to make the website responsive and viewable on different devices/screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
+      // execute the loadMusicPlayer function when the DOM content has loaded
       window.addEventListener('DOMContentLoaded', (event) => {
         loadMusicPlayer();
       });
     </script>
   </head>
   <body>
+    <!-- navigation menu -->
     <ul>
       <li><a href="index.html" class ="">Home</a></li>
       <li><a href="toronto.html" class ="">Toronto</a></li>
       <li><a href="art.html" class ="">Art</a></li>
+      <!-- set playlist page active -->
       <li><a href="playlist.html" class ="active">Playlist</a></li>
       <li><a href="contact.html" class ="">Contact</a></li>
     </ul>
     <div id="content">
+      <!-- container for the music player -->
       <div class="song-player-container">
+        <!-- container for the song image -->
         <div class="song-image-container">
           <div class="song-image-wrapper">
+            <!-- song image displayed here -->
             <img id="song-image" src="" alt="Start Over Cover">
           </div>
         </div>
+        <!-- container for the song information -->
         <div class="song-information">
+          <!-- display song name -->
           <h2 id="song-name">Song name</h2>
+          <!-- displayed composer -->
           <h3 id="composer-name">Composer</h3>
         </div>
+        <!-- container for the mp3 controls -->
         <div class="mp3-controls">
           <audio id="audio-control" controls>
+            <!-- mp3 audio source -->
             <source id="audio-control-source" src="" type="audio/mpeg">
           </audio>
         </div>
+        <!-- container for the previous and next buttons -->
         <div class="buttons">
+          <!-- get the picture of the previous button from the music library -->
           <img id="prev-button" src="music/prev.png" alt="Prev Button"/>
+          <!-- get the picture of the next button from the music library -->
           <img id="next-button" src="music/next.png" alt="Next Button"/>
         </div>
       </div>  

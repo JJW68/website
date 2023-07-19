@@ -1,11 +1,14 @@
 <!DOCTYPE html>
   <head>
+    <!-- meta tag to make the website responsive and viewable on different devices/screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <!-- navigation menu -->
     <ul>
       <li><a href="index.html" class ="">Home</a></li>
+      <!-- set toronto page active -->
       <li><a href="toronto.html" class ="active">Toronto</a></li>
       <li><a href="art.html" class ="">Art</a></li>
       <li><a href="playlist.html" class ="">Playlist</a></li>
@@ -14,43 +17,61 @@
     <div id="content">
       <h2>Life in Toronto</h2>
       <h3>Favorite things about Toronto</h3>
+      <!-- container to hold text -->
       <div class="container">
         <p>
           Despite the lack of tourist attractions in Toronto, I still love exploring downtown. Toronto is one of the most diverse cities in the world and there's so much to experience. Other than the famous CN Tower, there are various hidden corners and spots waiting to be discovered; each with its own unique aspect to it.
         </p>
       </div>
+      <!-- the structure that I wanted for this page was to have a picture and the blurb beside each other so by using a grid, I can organize the content the way I want -->
       <div id="grid-id" class="grid-container">
+        <!-- image grid for Toronto music garden -->
         <div class="image-grid">
+          <!-- get picture from the image library -->
           <img src="images/music-garden.png" alt="Toronto Music Garden">
         </div>
+        <!-- grid item for Toronto Music Garden description -->
         <div class="grid-item">
+          <!-- left-aligned class to organize text -->
           <p class ="left-aligned">
-            Toronto Music Garden: The Toronto Music Garden is often an overlooked park when people go visit harbourfront. It's a calm and peaceful place to read, take a stroll, and relax. A nice place to see the sunset and listen to music at the end of the park awaits you.
+            <b>Toronto Music Garden:</b> The Toronto Music Garden is often an overlooked park when people go visit harbourfront. It's a calm and peaceful place to read, take a stroll, and relax. A nice place to see the sunset and listen to music at the end of the park awaits you.
           </p>
         </div>
+        <!-- grid item for Distillery district description -->
         <div class="grid-item">
+          <!-- left-aligned class to organize text -->
           <p class ="left-aligned"> 
-            Distillery District: Although it's cold, the distillery district is the most beautiful during the Winter. There's many holiday treats to try and a big Christmas tree surrounded by fairy lights. 
+            <b>Distillery District:</b> Although it's cold, the distillery district is the most beautiful during the Winter. There's many holiday treats to try and a big Christmas tree surrounded by fairy lights. 
           </p>
         </div>
+        <!-- image grid for Distillery District -->
         <div class="image-grid">
+          <!-- get picture from the image library -->
           <img src="images/distillery.jpeg" alt="Toronto Music Garden">
         </div>
+        <!-- image grid for Thomas Fisher Rare Book Library -->
         <div class="image-grid">
-          <img src="images/library.jpeg" alt="Toronto Music Garden">
+          <!-- get picture from the image library -->
+          <img src="images/library.jpeg" alt="Thomas Fisher Rare Book Library">
         </div>
+        <!-- grid item for Thomas Fisher Rare Book Library description -->
         <div class="grid-item">
+          <!-- left-aligned class to organize text -->
           <p class ="left-aligned">
-            Thomas Fisher Rare Book Library: A beautiful library at the University of Toronto that houses many rare books and special manuscripts that are worth exploring.
+            <b>Thomas Fisher Rare Book Library:</b> A beautiful library at the University of Toronto that houses many rare books and special manuscripts that are worth exploring.
           </p>
         </div>
+        <!-- grid item for The Monkey's Paw description -->
         <div class="grid-item">
+          <!-- left-aligned class to organize text -->
           <p class ="left-aligned">
-            The Monkey's Paw is an antique book store specializing in uncommon books and paper artifacts. Inside you can find the BiblioMat, the world's first randomizing vending machine for old books. Perfect for old books lovers. 
+            <b>The Monkey's Paw:</b> The Monkey's Paw is an antique book store specializing in uncommon books and paper artifacts. Inside you can find the BiblioMat, the world's first randomizing vending machine for old books. Perfect for old books lovers. 
           </p>
         </div>
+        <!-- image grid for The Monkey's Paw -->
         <div class="image-grid">
-          <img src="images/monkeys-paw.jpeg" alt="Toronto Music Garden">
+          <!-- get picture from the image library -->
+          <img src="images/monkeys-paw.jpeg" alt="The Monkey's Paw">
         </div>
       </div>
     </div>
