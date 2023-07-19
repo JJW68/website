@@ -1,17 +1,48 @@
-// home page
-function loadHomePage() {
-}
+class MusicPlayer {
+  constructor(
+    songNameElement,
+    composerNameElement,
+    songImageElement,
+    audioControl,
+    audioControlSource
+    ) {
+    this.songs = [];
+    this.songIndex = 0;
 
-// Toronto page
-function loadTorontoPage() {
-}
+    this.songNameElement = songNameElement;
+    this.composerNameElement = composerNameElement;
+    this.songImageElement = songImageElement;
+    this.audioControl = audioControl;
+    this.audioControlSource = audioControlSource;
+  }
 
-// art page
-function loadArtPage() {
-}
+  addSong(song) {
+    this.songs.push(song);
+  }
 
-// resume page
-function loadResumePage() {
+  loadSongAtIndex(i) {
+    this.songNameElement.innerHTML = songs[i].songName;
+    this.composerNameElement.innerHTML = songs[i].composer;
+    this.songImageElement.src = "music/" + songs[i].albumCover;
+    this.audioControlSource.src = "music/" + songs[i].fileName;
+    this.audioControl.load();
+  }
+
+  nextSong() {
+    ++this.songIndex;
+    if (this.songIndex >= this.songs.length) {
+      this.songIndex = 0;
+    }
+    this.loadSongAtIndex(this.songIndex);
+  }
+
+  prevSong() {
+    --this.songIndex;
+    if (this.songIndex < 0) {
+      this.songIndex = this.songs.length - 1;
+    }
+    this.loadSongAtIndex(this.songIndex);
+  }
 }
 
 const songs = [
@@ -47,36 +78,29 @@ const songs = [
   }
 ];
 
-let songIndex = 0;
-
-function loadSongAtIndex(i) {
-  document.querySelector("#song-name").innerHTML = songs[i].songName;
-  document.querySelector("#composer-name").innerHTML = songs[i].composer;
-  document.querySelector("#song-image").src = "music/" + songs[i].albumCover;
-  document.getElementById("audio-control-source").src = "music/" + songs[i].fileName;
-  document.getElementById("audio-control").load();
-}
+let musicPlayer;
 
 function loadMusicPlayer() {
-  loadSongAtIndex(0);
+  musicPlayer = new MusicPlayer(
+    document.querySelector("#song-name"),
+    document.querySelector("#composer-name"),
+    document.querySelector("#song-image"),
+    document.getElementById("audio-control"),
+    document.getElementById("audio-control-source")
+  )
+  for (let i = 0; i < songs.length; i++) {
+    musicPlayer.addSong(songs[i]);
+  }
+  musicPlayer.loadSongAtIndex(0);
 
   document.getElementById("prev-button").addEventListener("click", prevButtonPressed);
   document.getElementById("next-button").addEventListener("click", nextButtonPressed);
 }
 
 function prevButtonPressed() {
-  --songIndex;
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
-  }
-  console.log("prev");
-  loadSongAtIndex(songIndex);
+  musicPlayer.prevSong();
 }
 
 function nextButtonPressed() {
-  ++songIndex;
-  if (songIndex >= songs.length) {
-    songIndex = 0;
-  }
-  loadSongAtIndex(songIndex);
+  musicPlayer.nextSong();
 }
