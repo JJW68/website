@@ -131,9 +131,12 @@ li .active {
 
 /*toronto*/
 
-.image-grid img {
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 50px;
 }
 
 .grid-item {
@@ -142,10 +145,13 @@ li .active {
   align-items: center;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-.grid-container {
-  margin: 50px;
+.image-grid img {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /*resume*/
@@ -177,10 +183,6 @@ button {
 
 /* home */
 
-.circle-container {
-  position: relative;
-}
-
 .circle1 {
   position: fixed;
   top: 50%;
@@ -202,9 +204,7 @@ button {
 
 .circle2 {
   position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateX(-405%) translateY(-90%);
+  margin-left: -200px;
   width: 240px;
   height: 240px;
   border-radius: 50%;
