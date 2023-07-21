@@ -328,14 +328,16 @@ button {
 
 /* guide page */
 
+/* container for the image */
 .guide-image1 {
-  max-width: 500px; /* I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 400px */
+  max-width: 500px; /* I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 500px */
   height: 100px;
   margin: 10px auto;
   border: 5px solid #b1e4db;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* fit the image to be in the container */
 .guide-image1 img {
   width: 100%;
   height: 100%;
@@ -343,7 +345,7 @@ button {
 }
 
 .guide-image2 {
-  max-width: 500px; /*I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 400px */
+  max-width: 500px; /*I use 'max-width' instead of 'width' so the container adjusts in size when the webpage is adjusted to be smaller than 500px */
   height: 160px;
   margin: 10px auto;
   border: 5px solid #b1e4db;
@@ -356,6 +358,7 @@ button {
   object-fit: contain;
 }
 
+/* margin for the left and right sides of the page so the instructions are not right at the edge of the webpage */
 .margin {
   margin-left: 50px;
   margin-right: 50px;
@@ -364,6 +367,7 @@ button {
 /* media query so the playlist adjusts to a minature verison of itself when the webpage is small or is viewed on a phone */
 @media screen and (max-width: 600px) {
   
+  /* adjust the margin so when the screen size is smaller, the instructions span the whole width */
   .margin {
     margin-left: 10px;
     margin-right: 10px;
