@@ -1,3 +1,4 @@
+// for playlist
 class MusicPlayer {
   constructor(
     songNameElement,        // element to display the song name
@@ -124,3 +125,46 @@ function nextButtonPressed() {
 window.addEventListener('DOMContentLoaded', (event) => {
   loadMusicPlayer();
 });
+
+// ratings for entertainment page
+document.addEventListener("DOMContentLoaded", function() {
+  const ratings = document.querySelectorAll(".rating");
+  
+  ratings.forEach(ratingDiv => {
+    const ratingValue = parseFloat(ratingDiv.getAttribute("data-rating"));
+    const fullStars = Math.floor(ratingValue);
+    const hasHalfStar = ratingValue % 1 !== 0;
+    
+    let starsHTML = "";
+    
+    // Full stars
+    for (let i = 0; i < fullStars; i++) {
+      starsHTML += "<i class='fas fa-star'></i>";
+    }
+    
+    // Half star
+    if (hasHalfStar) {
+      starsHTML += "<i class='fas fa-star-half-alt'></i>";
+    }
+    
+    // Empty stars
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      starsHTML += "<i class='far fa-star'></i>";
+    }
+    
+    ratingDiv.innerHTML = starsHTML;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const flipContainers = document.querySelectorAll(".flip-container");
+  
+  flipContainers.forEach(container => {
+    container.addEventListener("click", function(e) {
+      e.stopPropagation(); // prevent other interactions
+      container.classList.toggle("flipped");
+    });
+  });
+});
+
