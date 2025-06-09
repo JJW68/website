@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// flip card on click
 document.addEventListener("DOMContentLoaded", function() {
   const flipContainers = document.querySelectorAll(".flip-container");
   
@@ -168,3 +169,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const gallery = document.querySelector(".mundane");
+  const images = document.querySelectorAll(".mundane img");
+  let index = 0;
+
+  function showNextImage() {
+    index = (index + 1) % images.length;
+    gallery.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Example: rotate every 4 seconds
+  setInterval(showNextImage, 4000);
+});
+
+// special events
